@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.scss';
 import { CountPanel } from './CountPanel/CountPanel';
 import { Button } from './Button/Button';
@@ -11,17 +11,23 @@ function App() {
   const [disabledInc, setDisabledInc] = useState<boolean>(false) //Для inc
   const [disabledReset, setDisabledReset] = useState<boolean>(true) //Для reset
 
+
   const setInc = () => {
 
-    setCount(count + 1)
-    setDisabledReset(false)
-    if (count === 6) {
+    let value;
+
+    if (count < 2) {
+      value = count + 1
+      setCount(value)
+      setDisabledReset(false)
+    } 
+    if (value === 2) {
       setDisabledInc(true)
     }
   }
 
-  const setReset = () => {
 
+  const setReset = () => {
     setCount(0)
     setDisabledReset(true)
     if (disabledInc) {
