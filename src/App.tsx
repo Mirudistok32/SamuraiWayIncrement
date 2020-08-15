@@ -1,24 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import './App.scss';
+import { CountPanel } from './CountPanel/CountPanel';
+import { Button } from './Button/Button';
+
+
 
 function App() {
+
+  const [count, setCount] = useState<number>(0)
+  const [disabledInc, setDisabledInc] = useState<boolean>(false) //Для inc
+  const [disabledReset, setDisabledReset] = useState<boolean>(true) //Для reset
+
+  const setInc = () => {
+
+    setCount(count + 1)
+    setDisabledReset(false)
+    if (count === 6) {
+      setDisabledInc(true)
+    }
+  }
+
+  const setReset = () => {
+
+    setCount(0)
+    setDisabledReset(true)
+    if (disabledInc) {
+      setDisabledInc(false)
+    }
+  }
+
+
+  let classCountPanel = 'app__countPanel'
+  if (disabledInc) {
+    classCountPanel += ' app__countPanel-max'
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <div className="app__panel">
+        <div className={classCountPanel}>
+          <CountPanel count={count} activeClass={disabledInc} />
+        </div>
+        <div className="app__api">
+          <Button title="inc" onClick={setInc} disabled={disabledInc} />
+          <Button title="reset" onClick={setReset} isMaxValue={disabledInc} disabled={disabledReset} />
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,35 @@
+.button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border-style: none;
+  background-color: transparent;
+  color: snow;
+  box-shadow: 0 0 8px 0px white, 0 0 1px 3px snow, 0 0 0 1px white;
+  transition: all 0.23s ease-in-out;
+  font-size: 30px;
+  &:hover {
+    box-shadow: 0 0 8px 1px white, 0 0 1px 3px #000;
+    background-color: snow;
+    color: #2d2d2d;
+  }
+  &__disabled {
+    opacity: 0.5;
+    background-color: snow;
+    color: rgba(44, 42, 42, 0.39);
+    box-shadow: none;
+    &:hover {
+      box-shadow: none;
+      color: rgba(44, 42, 42, 0.39);
+    }
+  }
+  &__max {
+    box-shadow: 0 0 8px 0px cyan, 0 0 1px 3px turquoise, 0 0 0 1px cyan;
+    text-shadow: 1px -1px 10px turquoise;
+    color: rgb(133, 221, 212);
+    &:hover {
+      box-shadow: 0 0 3px 0px cyan, inset 0 0 1px 1px turquoise, 0 0 0 1px cyan;
+      background-color: #2d2d2d;
+      color: cyan;
+    }
+  }
+}
