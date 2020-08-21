@@ -6,9 +6,12 @@ import { SettingCanvas } from './SettingCanvas/SettingCanvas';
 
 function App() {
 
-  const [startValue, setStartValue] = useState<number>(3)
-  const [maxValue, setMaxValue] = useState<number>(7)
+  const [startValue, setStartValue] = useState<number>(0)
+  const [maxValue, setMaxValue] = useState<number>(1)
   const [count, setCount] = useState<number>(startValue)
+  const [error, setError] = useState<string>('')
+  const [isChangeValue, setIsChangeValue] = useState<boolean>(false)
+
 
 
   const setInc = () => {
@@ -22,8 +25,13 @@ function App() {
   return (
     <div className="app">
       <SettingCanvas
+        error={error}
         setStartValue={setStartValue}
         setMaxValue={setMaxValue}
+        setCount={setCount}
+        setError={setError}
+        isChangeValue={isChangeValue}
+        setIsChangeValue={setIsChangeValue}
       />
       <CountCanvas
         startValue={startValue}
@@ -31,6 +39,8 @@ function App() {
         count={count}
         setInc={setInc}
         setReset={setReset}
+        error={error}
+        isChangeValue={isChangeValue}
       />
     </div>
   );

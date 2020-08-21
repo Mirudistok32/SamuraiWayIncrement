@@ -21,6 +21,8 @@
     flex-direction: column;
     justify-content: center;
     flex: 1 0 auto;
+    max-height: 200px;
+    height: 100%;
   }
   &__api {
     box-shadow: 0 0 0 2px snow;
@@ -35,5 +37,11 @@
   }
   &__max-value{
       box-shadow: 0 0 5px 3px darkred;
+  }
+  &__error{
+    display: inline-block;
+    font-size: 15px;
+    background-color: pink;
+    padding: 5px;
   }
 }

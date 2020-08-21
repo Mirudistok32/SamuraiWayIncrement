@@ -1,5 +1,12 @@
 .count-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
   &__max-value{
       color: darkred;
+  }
+  &__error{
+    font-size: 32px;
   }
 }
