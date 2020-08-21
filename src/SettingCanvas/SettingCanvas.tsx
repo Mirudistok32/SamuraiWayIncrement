@@ -46,7 +46,6 @@ export const SettingCanvas: React.FC<PropsType> = (props) => {
       setError("")
     }
   }
-
   useEffect(() => {
     isError()
   }, [maxValueLocal, startValueLocal])

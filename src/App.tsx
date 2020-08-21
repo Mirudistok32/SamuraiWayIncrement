@@ -13,7 +13,6 @@ function App() {
   const [isChangeValue, setIsChangeValue] = useState<boolean>(false)
 
 
-
   const setInc = () => {
     setCount(count => count + 1)
   }
@@ -24,24 +23,29 @@ function App() {
 
   return (
     <div className="app">
-      <SettingCanvas
-        error={error}
-        setStartValue={setStartValue}
-        setMaxValue={setMaxValue}
-        setCount={setCount}
-        setError={setError}
-        isChangeValue={isChangeValue}
-        setIsChangeValue={setIsChangeValue}
-      />
-      <CountCanvas
-        startValue={startValue}
-        maxValue={maxValue}
-        count={count}
-        setInc={setInc}
-        setReset={setReset}
-        error={error}
-        isChangeValue={isChangeValue}
-      />
+      <h1 className="app__title">
+        Расчет от {startValue} до {maxValue}
+      </h1>
+      <div className="app__canvas">
+        <SettingCanvas
+          error={error}
+          setStartValue={setStartValue}
+          setMaxValue={setMaxValue}
+          setCount={setCount}
+          setError={setError}
+          isChangeValue={isChangeValue}
+          setIsChangeValue={setIsChangeValue}
+        />
+        <CountCanvas
+          startValue={startValue}
+          maxValue={maxValue}
+          count={count}
+          setInc={setInc}
+          setReset={setReset}
+          error={error}
+          isChangeValue={isChangeValue}
+        />
+      </div>
     </div>
   );
 }
