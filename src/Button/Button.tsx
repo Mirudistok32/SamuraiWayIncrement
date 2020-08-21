@@ -19,12 +19,13 @@ export const Button: React.FC<PropsType> = (props) => {
   if (disabled) mainClass += ` ` + s.button__disabled
   if (isClickMe) mainClass += ` ` + s.button__clickMe
 
-    const onClickHandler = () => {
-      onClick && onClick()
-    }
+  const onClickHandler = () => {
+    onClick && onClick()
+  }
+
 
   return (
-    <button className={mainClass} onClick={onClickHandler} disabled={disabled}>
+    <button className={mainClass} onClick={onClickHandler} disabled={disabled} >
       {
         title
       }

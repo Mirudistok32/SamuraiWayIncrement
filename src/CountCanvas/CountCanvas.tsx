@@ -12,13 +12,14 @@ type ClassesType = {
 type PropsType = {
   maxValue: number
   count: number
+  startValue: number
   setInc: () => void
   setReset: () => void
 }
 
 export const CountCanvas: React.FC<PropsType> = (props) => {
 
-  const { setInc, setReset, count, maxValue } = props
+  const { setInc, setReset, count, maxValue, startValue } = props
 
   //Объект для работы с классами
   let classes: ClassesType = {
@@ -35,7 +36,7 @@ export const CountCanvas: React.FC<PropsType> = (props) => {
       </div>
       <div className={classes.countCanvasApi}>
         <Button title={'Inc'} onClick={setInc} disabled={count >= maxValue} />
-        <Button title={'Reset'} onClick={setReset} disabled={count < 1} isClickMe={count >= maxValue} />
+        <Button title={'Reset'} onClick={setReset} disabled={count < (startValue + 1)} isClickMe={count >= maxValue} />
       </div>
     </div>
   );

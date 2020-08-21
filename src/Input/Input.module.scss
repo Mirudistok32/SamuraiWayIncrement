@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  align-items: center;
+  font-size: 21px;
+  padding: 10px 30px 10px 10px;
+  margin: 1px 0;
+  &__title {
+    width: 100%;
+  }
+  &__input {
+    width: 100%;
+    border-style: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 21px;
+    box-shadow: 0 0 0 2px #2d2d2d;
+  }
+  &__input:focus{
+    box-shadow: 0 0 0 2px #2d2d2d, 0 0 20px 1px skyblue;
+  }
+}
