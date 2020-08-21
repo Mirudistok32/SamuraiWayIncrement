@@ -50,6 +50,22 @@ export const SettingCanvas: React.FC<PropsType> = (props) => {
     isError()
   }, [maxValueLocal, startValueLocal])
 
+
+  useEffect(() => {
+    let localStorageStartValue: string | null = localStorage.getItem('Start value')
+    let localStorageMaxValue: string | null = localStorage.getItem('Max value')
+
+    if (localStorageStartValue) {
+      setStartValueLocal(+localStorageStartValue)
+      setStartValue(+localStorageStartValue)
+      setCount(+localStorageStartValue)
+    }
+    if (localStorageMaxValue) {
+      setMaxValueLocal(+localStorageMaxValue)
+      setMaxValue(+localStorageMaxValue)
+    }
+  }, [maxValueLocal, startValueLocal, setCount, setMaxValue, setStartValue])
+
   const onClickHandler = () => {
     setStartValue(startValueLocal)
     setMaxValue(maxValueLocal)
@@ -61,6 +77,12 @@ export const SettingCanvas: React.FC<PropsType> = (props) => {
     setIsChangeValue(true)
   }
 
+  //Записываю в локалсторедж
+  const localStorageHandler = (title: string, value: string) => {
+    localStorage.setItem(title, value)
+  }
+
+
   return (
     <div className={classes.mainClass}>
       <div className={classes.countCanvasDisplay}>
@@ -69,13 +91,17 @@ export const SettingCanvas: React.FC<PropsType> = (props) => {
           value={maxValueLocal}
           setValue={setMaxValueLocal}
           error={error}
-          setIsChangeValue={setIsChangeValueHandler} />
+          setIsChangeValue={setIsChangeValueHandler}
+          localStorage={localStorageHandler}
+        />
         <Input
           title={"Start value"}
           value={startValueLocal}
           setValue={setStartValueLocal}
           error={error}
-          setIsChangeValue={setIsChangeValueHandler} />
+          setIsChangeValue={setIsChangeValueHandler}
+          localStorage={localStorageHandler}
+        />
         {
           error && <span className={classes.countSpanError}>{error}</span>
         }
