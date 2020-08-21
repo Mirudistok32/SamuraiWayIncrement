@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/SamuraiWayIncrement/static/css/main.9b81df09.chunk.css",
+    "main.js": "/SamuraiWayIncrement/static/js/main.2ca9d416.chunk.js",
+    "main.js.map": "/SamuraiWayIncrement/static/js/main.2ca9d416.chunk.js.map",
+    "runtime-main.js": "/SamuraiWayIncrement/static/js/runtime-main.c7c84ce4.js",
+    "runtime-main.js.map": "/SamuraiWayIncrement/static/js/runtime-main.c7c84ce4.js.map",
+    "static/js/2.6893dff3.chunk.js": "/SamuraiWayIncrement/static/js/2.6893dff3.chunk.js",
+    "static/js/2.6893dff3.chunk.js.map": "/SamuraiWayIncrement/static/js/2.6893dff3.chunk.js.map",
+    "index.html": "/SamuraiWayIncrement/index.html",
+    "precache-manifest.9a02c67164e205933c4bb2feffcdf612.js": "/SamuraiWayIncrement/precache-manifest.9a02c67164e205933c4bb2feffcdf612.js",
+    "service-worker.js": "/SamuraiWayIncrement/service-worker.js",
+    "static/css/main.9b81df09.chunk.css.map": "/SamuraiWayIncrement/static/css/main.9b81df09.chunk.css.map",
+    "static/js/2.6893dff3.chunk.js.LICENSE.txt": "/SamuraiWayIncrement/static/js/2.6893dff3.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c7c84ce4.js",
+    "static/js/2.6893dff3.chunk.js",
+    "static/css/main.9b81df09.chunk.css",
+    "static/js/main.2ca9d416.chunk.js"
+  ]
+}
