@@ -1,29 +1,30 @@
 import React from 'react';
-import './Button.scss';
+import s from './Button.module.scss';
 
 
 type PropsType = {
   title: string
-  onClick: () => void
+  error?: string
+  isClickMe?: boolean
   disabled?: boolean
-  isMaxValue?: boolean
+  onClick?: () => void
 }
 
 export const Button: React.FC<PropsType> = (props) => {
 
-  const { title, onClick, disabled, isMaxValue } = props
+  const { title, error, disabled, isClickMe, onClick } = props
 
+  let mainClass = s.button
+  if (error) mainClass += ` ` + s.button__error
+  if (disabled) mainClass += ` ` + s.button__disabled
+  if (isClickMe) mainClass += ` ` + s.button__clickMe
 
-  let classButton = 'button'
-  if (disabled) {
-    classButton += ` button__disabled`
-  }
-  if (isMaxValue) {
-    classButton += ` button__max`
-  }
+    const onClickHandler = () => {
+      onClick && onClick()
+    }
 
   return (
-    <button className={classButton} onClick={onClick} disabled={disabled}>
+    <button className={mainClass} onClick={onClickHandler} disabled={disabled}>
       {
         title
       }

@@ -1,24 +1,21 @@
 import React from 'react';
-import './CountPanel.scss';
+import s from './CountPanel.module.scss';
 
 
 type PropsType = {
   count: number
-  activeClass: boolean
+  maxValue: number
 }
 
 export const CountPanel: React.FC<PropsType> = (props) => {
 
-  const { count, activeClass } = props
+  const { count, maxValue } = props
 
-
-  let classPanel = 'countPanel'
-  if (activeClass) {
-    classPanel += ' countPanel__max'
-  }
+  let mainClass = s['count-panel']
+  if(count >= maxValue) mainClass += ` ` + s['count-panel__max-value'] 
 
   return (
-    <div className={classPanel}>
+    <div className={mainClass}>
       {
         count
       }

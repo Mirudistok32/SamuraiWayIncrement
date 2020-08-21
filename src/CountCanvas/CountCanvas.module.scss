@@ -1,0 +1,31 @@
+.count-canvas {
+  max-width: 450px;
+  max-height: 350px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 0 2px snow;
+  border-radius: 10px;
+  padding: 20px;
+  &__display {
+    color: #2d2d2d;
+    font-size: 130px;
+    font-weight: 600;
+    background-color: snow;
+    border-radius: 10px;
+    padding: 20px 0;
+    margin-bottom: 20px;
+  }
+  &__api {
+    box-shadow: 0 0 0 2px snow;
+    border-radius: 10px;
+    padding: 10px;
+    max-height: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  &__max-value{
+      box-shadow: 0 0 5px 3px darkred;
+  }
+}

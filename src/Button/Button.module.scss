@@ -1,0 +1,42 @@
+.button {
+  border-style: none;
+  padding: 10px 20px;
+  font-size: 32px;
+  border-radius: 5px;
+  background-color: transparent;
+  box-shadow: 0 0 0px 2px snow;
+  color: snow;
+  transition: all 0.23s ease-in-out;
+  &:hover {
+    box-shadow: 0 0 7px 4px #000, 0 0 10px 5px snow;
+    background-color: snow;
+    color: #2d2d2d;
+  }
+  &__error {
+    box-shadow: 0 0 0px 2px darkred;
+    &:hover {
+      box-shadow: 0 0 7px 4px #000, 0 0 10px 5px darkred;
+    }
+  }
+  &__disabled {
+    color: dimgrey;
+    background-color: rgba(105, 105, 105, 0.438);
+    box-shadow: 0 0 0px 2px dimgrey;
+    &:hover {
+      box-shadow: none;
+      background-color: rgba(105, 105, 105, 0.438);
+      box-shadow: 0 0 0px 2px dimgrey;
+      color: dimgrey;
+    }
+  }
+  &__clickMe {
+    box-shadow: 0 0 0px 2px steelblue, 0 0 20px 0px cyan;
+    color: cyan;
+    &:hover {
+      box-shadow: 0 0 7px 4px #000, 0 0 10px 5px snow, 0 0 15px 0px cyan;
+      background-color: #2d2d2d;
+      color: cyan;
+      text-shadow: 0 0 10px cyan;
+    }
+  }
+}
