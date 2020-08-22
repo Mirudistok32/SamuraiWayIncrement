@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import s from './SettingCanvas.module.scss';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
+import { useHistory } from 'react-router-dom';
 
 type ClassesType = {
   mainClass: string
@@ -66,11 +67,13 @@ export const SettingCanvas: React.FC<PropsType> = (props) => {
     }
   }, [maxValueLocal, startValueLocal, setCount, setMaxValue, setStartValue])
 
+  let history = useHistory()
   const onClickHandler = () => {
     setStartValue(startValueLocal)
     setMaxValue(maxValueLocal)
     setCount(startValueLocal)
     setIsChangeValue(false)
+    history.push('/main')
   }
 
   const setIsChangeValueHandler = () => {

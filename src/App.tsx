@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.scss';
 import { CountCanvas } from './CountCanvas/CountCanvas';
 import { SettingCanvas } from './SettingCanvas/SettingCanvas';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 
 function App() {
@@ -23,28 +24,36 @@ function App() {
 
   return (
     <div className="app">
+
       <h1 className="app__title">
         Расчет от {count} до {maxValue}
       </h1>
       <div className="app__canvas">
-        <SettingCanvas
-          error={error}
-          setStartValue={setStartValue}
-          setMaxValue={setMaxValue}
-          setCount={setCount}
-          setError={setError}
-          isChangeValue={isChangeValue}
-          setIsChangeValue={setIsChangeValue}
-        />
-        <CountCanvas
-          startValue={startValue}
-          maxValue={maxValue}
-          count={count}
-          setInc={setInc}
-          setReset={setReset}
-          error={error}
-          isChangeValue={isChangeValue}
-        />
+        <Switch>
+          <Route exact path="/" render={() => <Redirect to="/main" />} />
+          <Route path="/main" render={() => (
+            <CountCanvas
+              startValue={startValue}
+              maxValue={maxValue}
+              count={count}
+              setInc={setInc}
+              setReset={setReset}
+              error={error}
+              isChangeValue={isChangeValue}
+            />
+          )} />
+          <Route path="/setting" render={() => (
+            <SettingCanvas
+              error={error}
+              setStartValue={setStartValue}
+              setMaxValue={setMaxValue}
+              setCount={setCount}
+              setError={setError}
+              isChangeValue={isChangeValue}
+              setIsChangeValue={setIsChangeValue}
+            />
+          )} />
+        </Switch>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React from 'react';
 import s from './CountCanvas.module.scss';
 import { CountPanel } from '../CountPanel/CountPanel';
 import { Button } from '../Button/Button';
+import { useHistory } from 'react-router-dom';
 
 type ClassesType = {
   mainClass: string
@@ -31,15 +32,21 @@ export const CountCanvas: React.FC<PropsType> = (props) => {
   }
   if (count >= maxValue) classes.countCanvasDisplay += ` ` + s['count-canvas__max-value']
 
+  //Для перенаправления на окно настроек
+  let history = useHistory();
+  const redirectSettings = () => {
+    history.push('/setting')
+  }
 
   return (
     <div className={classes.mainClass}>
       <div className={classes.countCanvasDisplay}>
-        <CountPanel count={count} maxValue={maxValue} error={error} isChangeValue={isChangeValue}/>
+        <CountPanel count={count} maxValue={maxValue} error={error} isChangeValue={isChangeValue} />
       </div>
       <div className={classes.countCanvasApi}>
         <Button title={'Inc'} onClick={setInc} disabled={count >= maxValue} />
         <Button title={'Reset'} onClick={setReset} disabled={count < (startValue + 1)} isClickMe={count >= maxValue} />
+        <Button title={'Set'} onClick={redirectSettings} />
       </div>
     </div>
   );
