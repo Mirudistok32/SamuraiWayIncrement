@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import s from './SettingCanvas.module.scss';
 import { Button } from '../Button/Button';
 import { Input } from '../Input/Input';
@@ -36,7 +36,7 @@ export const SettingCanvas: React.FC<PropsType> = (props) => {
     countSpanError: s['count-canvas__error']
   }
 
-  const isError = () => {
+  const isError = useCallback(() => {
     if (startValueLocal < 0) {
       setError("Start value can not be less 0")
     } else if (maxValueLocal === startValueLocal) {
@@ -46,10 +46,11 @@ export const SettingCanvas: React.FC<PropsType> = (props) => {
     } else {
       setError("")
     }
-  }
+  }, [maxValueLocal, startValueLocal, setError])
+
   useEffect(() => {
     isError()
-  }, [maxValueLocal, startValueLocal])
+  }, [maxValueLocal, startValueLocal, isError])
 
 
   useEffect(() => {
