@@ -59,14 +59,11 @@ export const SettingCanvas: React.FC<PropsType> = (props) => {
 
     if (localStorageStartValue) {
       setStartValueLocal(+localStorageStartValue)
-      setStartValue(+localStorageStartValue)
-      setCount(+localStorageStartValue)
     }
     if (localStorageMaxValue) {
       setMaxValueLocal(+localStorageMaxValue)
-      setMaxValue(+localStorageMaxValue)
     }
-  }, [maxValueLocal, startValueLocal, setCount, setMaxValue, setStartValue])
+  }, [maxValueLocal, startValueLocal])
 
   let history = useHistory()
   const onClickHandler = () => {
