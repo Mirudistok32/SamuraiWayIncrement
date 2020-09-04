@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/SamuraiWayIncrement/static/css/main.3a67b384.chunk.css",
-    "main.js": "/SamuraiWayIncrement/static/js/main.a3fb8fec.chunk.js",
-    "main.js.map": "/SamuraiWayIncrement/static/js/main.a3fb8fec.chunk.js.map",
+    "main.css": "/SamuraiWayIncrement/static/css/main.2dd617b1.chunk.css",
+    "main.js": "/SamuraiWayIncrement/static/js/main.bb2abcc1.chunk.js",
+    "main.js.map": "/SamuraiWayIncrement/static/js/main.bb2abcc1.chunk.js.map",
     "runtime-main.js": "/SamuraiWayIncrement/static/js/runtime-main.c7c84ce4.js",
     "runtime-main.js.map": "/SamuraiWayIncrement/static/js/runtime-main.c7c84ce4.js.map",
     "static/js/2.66738f53.chunk.js": "/SamuraiWayIncrement/static/js/2.66738f53.chunk.js",
     "static/js/2.66738f53.chunk.js.map": "/SamuraiWayIncrement/static/js/2.66738f53.chunk.js.map",
     "index.html": "/SamuraiWayIncrement/index.html",
-    "precache-manifest.0b6d885a7bd84fc8b54a6da432b61e27.js": "/SamuraiWayIncrement/precache-manifest.0b6d885a7bd84fc8b54a6da432b61e27.js",
+    "precache-manifest.61cc842385d9f5349ca85960550a11da.js": "/SamuraiWayIncrement/precache-manifest.61cc842385d9f5349ca85960550a11da.js",
     "service-worker.js": "/SamuraiWayIncrement/service-worker.js",
-    "static/css/main.3a67b384.chunk.css.map": "/SamuraiWayIncrement/static/css/main.3a67b384.chunk.css.map",
+    "static/css/main.2dd617b1.chunk.css.map": "/SamuraiWayIncrement/static/css/main.2dd617b1.chunk.css.map",
     "static/js/2.66738f53.chunk.js.LICENSE.txt": "/SamuraiWayIncrement/static/js/2.66738f53.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c7c84ce4.js",
     "static/js/2.66738f53.chunk.js",
-    "static/css/main.3a67b384.chunk.css",
-    "static/js/main.a3fb8fec.chunk.js"
+    "static/css/main.2dd617b1.chunk.css",
+    "static/js/main.bb2abcc1.chunk.js"
   ]
 }
