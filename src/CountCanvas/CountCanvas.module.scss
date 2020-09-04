@@ -6,6 +6,7 @@
   box-shadow: 0 0 0 2px snow;
   border-radius: 10px;
   padding: 20px;
+  margin-bottom: 10px;
   &__display {
     color: #2d2d2d;
     font-size: 130px;
@@ -32,7 +33,38 @@
     justify-content: space-evenly;
     flex-shrink: 0;
   }
-  &__max-value{
-      box-shadow: 0 0 5px 3px darkred;
+  &__max-value {
+    box-shadow: 0 0 5px 3px darkred;
+  }
+}
+@media (max-height: 414px) {
+  .count-canvas {
+    &__display {
+      padding: 20px 0;
+      max-height: 160px;
+      height: 100%;
+    }
+  }
+}
+@media (max-height: 375px) {
+  .count-canvas {
+    
+    &__display {
+      padding: 0px;
+      max-height: 130px;
+      height: 100%;
+    }
+  }
+}
+@media (max-width: 375px) {
+  .count-canvas {
+    max-width: 350px;
+    padding: 10px;
+  }
+}
+@media (max-width: 320px) {
+  .count-canvas {
+    max-width: 300px;
+    max-height: 340px;
   }
 }

@@ -40,3 +40,16 @@
     }
   }
 }
+
+@media (max-width: 375px) {
+  .button {
+    padding: 10px;
+    font-size: 32px;
+  }
+}
+@media (max-width: 320px) {
+  .button {
+    padding: 7px;
+    font-size: 27px;
+  }
+}
