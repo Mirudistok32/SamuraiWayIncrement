@@ -10,7 +10,7 @@ type PropsType = {
   onClick?: () => void
 }
 
-export const Button: React.FC<PropsType> = (props) => {
+export const Button: React.FC<PropsType> = React.memo((props) => {
 
   const { title, error, disabled, isClickMe, onClick } = props
 
@@ -31,4 +31,4 @@ export const Button: React.FC<PropsType> = (props) => {
       }
     </button>
   );
-}
+})

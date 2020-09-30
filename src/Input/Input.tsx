@@ -11,7 +11,7 @@ type PropsType = {
   localStorage: (title: string, value: string) => void
 }
 
-export const Input: React.FC<PropsType> = (props) => {
+export const Input: React.FC<PropsType> = React.memo((props) => {
 
   const { title, value, error, setValue, setIsChangeValue, localStorage } = props
 
@@ -34,4 +34,4 @@ export const Input: React.FC<PropsType> = (props) => {
       </label>
     </>
   );
-}
+})

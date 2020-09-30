@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.scss';
 import { CountCanvas } from './CountCanvas/CountCanvas';
 import { SettingCanvas } from './SettingCanvas/SettingCanvas';
@@ -14,7 +14,7 @@ function App() {
   const [isChangeValue, setIsChangeValue] = useState<boolean>(false)
 
 
-  useEffect(()=>{
+  useEffect(() => {
     let localStorageStartValue: string | null = localStorage.getItem('Start value')
     let localStorageMaxValue: string | null = localStorage.getItem('Max value')
 
@@ -26,15 +26,15 @@ function App() {
     if (localStorageMaxValue) {
       setMaxValue(+localStorageMaxValue)
     }
-  },[])
+  }, [])
 
   const setInc = () => {
     setCount(count => count + 1)
   }
 
-  const setReset = () => {
+  const setReset = useCallback(() => {
     setCount(startValue)
-  }
+  }, [startValue])
 
   return (
     <div className="app">

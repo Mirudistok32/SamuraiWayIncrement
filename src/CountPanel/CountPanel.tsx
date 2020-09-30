@@ -9,7 +9,7 @@ type PropsType = {
   isChangeValue: boolean
 }
 
-export const CountPanel: React.FC<PropsType> = (props) => {
+export const CountPanel: React.FC<PropsType> = React.memo((props) => {
 
   const { count, maxValue, error, isChangeValue } = props
 
@@ -30,4 +30,4 @@ export const CountPanel: React.FC<PropsType> = (props) => {
       }
     </div>
   );
-}
+})

@@ -74,14 +74,14 @@ export const SettingCanvas: React.FC<PropsType> = (props) => {
     history.push('/main')
   }
 
-  const setIsChangeValueHandler = () => {
+  const setIsChangeValueHandler = useCallback(() => {
     setIsChangeValue(true)
-  }
+  }, [setIsChangeValue])
 
   //Записываю в локалсторедж
-  const localStorageHandler = (title: string, value: string) => {
+  const localStorageHandler = useCallback((title: string, value: string) => {
     localStorage.setItem(title, value)
-  }
+  }, [])
 
 
   return (
