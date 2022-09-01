@@ -13,6 +13,13 @@ function App() {
   const [error, setError] = useState<string>('')
   const [isChangeValue, setIsChangeValue] = useState<boolean>(false)
 
+  console.group("App Increment");
+  console.log("document.referrer", document.referrer)
+  console.log("document.baseURI", document.baseURI)
+  console.log("window.parent", window.parent)
+  console.log("window.top", window.top)
+  console.log("window", window)
+  console.groupEnd();
 
   useEffect(() => {
     let localStorageStartValue: string | null = localStorage.getItem('Start value')
